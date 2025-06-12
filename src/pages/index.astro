@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import { ImagesSliderDemo } from '../components/Home.tsx';
+import { HeroSectionOne } from '../components/Hero.tsx';
+import { BentoGridSecondDemo } from '../components/BentoGridSecondDemo.tsx';
+import { AnimatedTestimonialsDemo } from '../components/AnimatedTestimonialsDemo.tsx';
+import { ExpandableCardDemo } from '../components/ExpandableCardDemo.tsx';
+import { SpotlightPreview } from '@/components/SpotlightPreview';
+import { SpotlightNewDemo } from '@/components/SpotlightNewDemo';
+import { ParallaxScrollSecondDemo } from '@/components/ParallaxScrollSecondDemo';
+import { CompareDemo } from '@/components/CompareDemo';
+
+---
+<Layout>
+	<ImagesSliderDemo client:load />
+	<HeroSectionOne client:load />
+	<ExpandableCardDemo client:load />
+	<SpotlightNewDemo client:load />
+	<ParallaxScrollSecondDemo client:load />
+	<CompareDemo client:load />
+	<AnimatedTestimonialsDemo client:load />	
+</Layout>
