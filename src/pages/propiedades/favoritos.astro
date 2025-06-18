@@ -5,13 +5,10 @@ import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/astro/comp
 
       <h1>Favoritos</h1>
       <nav>
-        <SignedOut>
+
             <div class="flex gap-4">
                 <h1>Por favor, inicia sesión para ver tus favoritos</h1>
-                <SignInButton mode="modal" />
+
             </div>
-        </SignedOut>
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
+
       </nav>
