@@ -3,6 +3,7 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import SectionHeading from "./SectionHeading";
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -127,14 +128,14 @@ export function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <div className="px-4 py-12 text-center max-w-3xl mx-auto">
-      <h2 className="text-3xl md:text-5xl font-bold text-green-900 mb-4">
-        Terrenos destacados
-      </h2>
-      <p className="text-neutral-600 md:text-lg">
-        Descubrí algunas de las propiedades más atractivas en La Fortuna de San Carlos. Ya sea para vivir, invertir o vacacionar, cada terreno tiene algo único que ofrecerte.
-      </p>
-      </div>
+      <div className="px-4 py-12 max-w-3xl mx-auto text-center">
+      <SectionHeading
+        badge="Oportunidades"
+        title="Terrenos"
+        highlight="destacados"
+        subtitle="Descubrí algunas de las propiedades más atractivas en La Fortuna de San Carlos. Ya sea para vivir, invertir o vacacionar, cada terreno tiene algo único que ofrecerte."
+      />
+    </div>
       <ul className="max-w-2xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
         {cards.map((card, index) => (
           <motion.div

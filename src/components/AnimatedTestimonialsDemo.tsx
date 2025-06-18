@@ -1,4 +1,5 @@
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import SectionHeading from "./SectionHeading";
 
 export function AnimatedTestimonialsDemo() {
   const testimonials = [
@@ -41,12 +42,12 @@ export function AnimatedTestimonialsDemo() {
 
   return (
     <div className="my-20 px-4">
-      <h2 className="text-3xl md:text-5xl font-bold text-center text-green-900">
-        Lo que dicen nuestros clientes
-      </h2>
-      <p className="text-center text-base md:text-lg text-neutral-600 max-w-2xl mx-auto mb-12">
-        En Terra Real Estate CR no solo vendemos terrenos, construimos confianza. Estos testimonios reflejan la experiencia de quienes han cumplido su sueño de invertir en La Fortuna de San Carlos con nuestro apoyo.
-      </p>
+    <SectionHeading
+      badge="Testimonios"
+      title="Lo que dicen nuestros"
+      highlight="clientes"
+      subtitle="En Terra Real Estate CR no solo vendemos terrenos, construimos confianza. Estos testimonios reflejan la experiencia de quienes han cumplido su sueño de invertir en La Fortuna de San Carlos con nuestro apoyo."
+    />
       <AnimatedTestimonials testimonials={testimonials} />
     </div>
   );

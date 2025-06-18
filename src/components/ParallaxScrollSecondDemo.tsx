@@ -1,14 +1,16 @@
 import { ParallaxScrollSecond } from "./ui/parallax-scroll-2";
+import SectionHeading from "@/components/SectionHeading";
 
 export function ParallaxScrollSecondDemo() {
   return (
     <div className="mt-20 py-4 px-4">
-      <h2 className="text-3xl md:text-5xl font-bold text-center mb-6 text-green-900">
-        Explorá nuestros proyectos
-      </h2>
-      <p className="text-center text-base md:text-lg text-neutral-600 max-w-2xl mx-auto mb-12">
-        Cada imagen cuenta una historia. Descubrí la belleza natural de nuestros terrenos y las oportunidades únicas que Terra Real Estate CR tiene para vos en La Fortuna y otras zonas de alto crecimiento.
-      </p>
+      <SectionHeading
+        badge="Galería"
+        title="Explorá nuestros"
+        highlight="proyectos"
+        subtitle="Cada imagen cuenta una historia. Descubrí la belleza natural de nuestros terrenos y las oportunidades únicas que Terra Real Estate CR tiene para vos en La Fortuna y otras zonas de alto crecimiento."
+      />
+
       <ParallaxScrollSecond images={images} />
     </div>
   );

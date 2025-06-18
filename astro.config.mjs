@@ -3,6 +3,9 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import node from "@astrojs/node";
+import clerk from "@clerk/astro";
+
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -15,5 +18,7 @@ export default defineConfig({
       }
     }
   },
-  integrations: [react()]
+  adapter: node({ mode: "standalone" }),
+  output: "server",
+  integrations: [react(), clerk()]
 });

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
@@ -13,64 +12,89 @@ export function NavbarDemo() {
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
+
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+      className={cn(
+        "fixed top-10 inset-x-0 max-w-6xl mx-auto z-50 bg-white backdrop-blur-md rounded-xl shadow-xl border border-gray-200 px-4 py-2",
+        className
+      )}
     >
-      <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Propiedades">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-            <HoveredLink href="/branding">Branding</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Caracteristicas">
-          <div className="  text-sm grid grid-cols-2 gap-10 p-4">
-            <ProductItem
-              title="Algochurn"
-              href="https://algochurn.com"
-              src="https://assets.aceternity.com/demos/algochurn.webp"
-              description="Prepare for tech interviews like never before."
-            />
-            <ProductItem
-              title="Tailwind Master Kit"
-              href="https://tailwindmasterkit.com"
-              src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-              description="Production ready Tailwind css components for your next project"
-            />
-            <ProductItem
-              title="Moonbeam"
-              href="https://gomoonbeam.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-              description="Never write from scratch again. Go from idea to blog in minutes."
-            />
-            <ProductItem
-              title="Rogue"
-              href="https://userogue.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-            />
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Testimonios">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Contacto">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-          </div>
-        </MenuItem>
-      </Menu>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <img
+            src="/logo.png"
+            alt="Logo Terrenos La Fortuna"
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
+          <span className="text-lg font-bold text-gold">Terrenos La Fortuna</span>
+        </div>
+
+        <Menu setActive={setActive}>
+          <MenuItem setActive={setActive} active={active} item="Propiedades">
+            <div className="flex flex-col space-y-2 text-sm">
+              <HoveredLink href="/propiedades">Ver todas</HoveredLink>
+              <HoveredLink href="/residencial">Residencial</HoveredLink>
+              <HoveredLink href="/condominio">Condominio</HoveredLink>
+              <HoveredLink href="/financiamiento">Financiamiento</HoveredLink>
+            </div>
+          </MenuItem>
+
+          <MenuItem setActive={setActive} active={active} item="Características">
+            <div className="grid grid-cols-2 gap-6 text-sm p-4">
+              <ProductItem
+                title="100% Financiamiento"
+                href="/financiamiento"
+                src="/images/colonial/IMG_6286.JPEG"
+                description="Compra tu terreno sin prima y solo con cédula."
+              />
+              <ProductItem
+                title="Titulados y listos"
+                href="/propiedades"
+                src="/images/colonial/IMG_6286.JPEG"
+                description="Propiedades con escritura en regla."
+              />
+              <ProductItem
+                title="Ubicación privilegiada"
+                href="/ubicacion"
+                src="/images/colonial/IMG_6286.JPEG"
+                description="Cerca del Volcán Arenal y zonas turísticas."
+              />
+              <ProductItem
+                title="Construcción opcional"
+                href="/construccion"
+                src="/images/colonial/IMG_6286.JPEG"
+                description="Ofrecemos paquetes con casa incluida."
+              />
+            </div>
+          </MenuItem>
+
+          <MenuItem setActive={setActive} active={active} item="Testimonios">
+            <div className="flex flex-col space-y-2 text-sm">
+              <HoveredLink href="/testimonios">Clientes felices</HoveredLink>
+              <HoveredLink href="/video-testimonios">Videos</HoveredLink>
+              <HoveredLink href="/galeria">Galería</HoveredLink>
+            </div>
+          </MenuItem>
+
+          <MenuItem setActive={setActive} active={active} item="Contacto">
+            <div className="flex flex-col space-y-2 text-sm">
+              <HoveredLink href="/contacto">Formulario</HoveredLink>
+              <HoveredLink href="https://wa.me/506XXXXXXXX">WhatsApp</HoveredLink>
+              <HoveredLink href="/agentes">Agentes</HoveredLink>
+            </div>
+          </MenuItem>
+        </Menu>
+
+        <a
+          href="/contacto"
+          className="hidden md:inline-block bg-gold hover:bg-orange-500 text-white text-sm font-medium px-4 py-2 rounded-full transition"
+        >
+          Cotiza ahora
+        </a>
+      </div>
     </div>
   );
 }
